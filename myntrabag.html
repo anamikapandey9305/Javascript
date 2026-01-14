@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Exercise 3</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+  <main>
+    <button class="bag-button" id="add-to-bag">Add to Bag</button>
+    <button class="wish-button">❤️ Wishlist</button>
+    <button class="bag-button" id="sale-item">Add 1+1 Sale Item</button>
+
+    <h1 id="cart-summary">Your Bag has 0 items</h1>
+  </main>
+
+  <script>
+    let cartQuantity = 6;
+
+    const cartSummary = document.querySelector('#cart-summary');
+    const addToBagBtn = document.querySelector('#add-to-bag');
+    const saleItemBtn = document.querySelector('#sale-item');
+
+    // Initial display
+    cartSummary.innerText = `Your Bag has ${cartQuantity} items`;
+
+    // Add to bag
+    addToBagBtn.addEventListener('click', () => {
+      cartQuantity++;
+      cartSummary.innerText = `Your Bag has ${cartQuantity} items`;
+    });
+
+    // 1+1 sale item (adds 2 items)
+    saleItemBtn.addEventListener('click', () => {
+      cartQuantity += 2;
+      cartSummary.innerText = `Your Bag has ${cartQuantity} items`;
+    });
+  </script>
+</body>
+</html>
